@@ -1,28 +1,36 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
+import 'Header.dart';
+import 'InputWrapper.dart';
+
 class LoginPage extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
       width: double.infinity,
-      decoration: BoxDecoration(
-          gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-        Colors.black,
-        Colors.black,
-        Colors.black,
-      ]),
-      ),
+      decoration: BoxDecoration(color: Colors.black),
+      child: Center(
       child: Column(
         children: <Widget>[
-          SizedBox(height: 80,)
-          Header(),
-          Expanded(child: Container(
-            
+          const SizedBox(height: 20),
+          Center(
+          child: Header()
+          ),
+          Expanded(
+              child: Container(
+            decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                )),
+            child: InputWrapper(),
           ))
-        ],),
+        ],
+      ),
+      )
     ));
   }
 }
